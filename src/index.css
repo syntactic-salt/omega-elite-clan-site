@@ -1,13 +1,195 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --vh: 1vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #333;
+    color: #eee;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #45ff00;
+    position: relative;
+    text-decoration: none;
+}
+
+a::after {
+    background-color: #45ff00;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    width: 0;
+}
+
+a:hover::after,
+a:focus::after {
+    left: 0;
+    width: 100%;
+}
+
+p {
+    margin: 15px 0;
+}
+
+section {
+    margin-top: 45px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo-fill {
+    fill: #45ff00;
+}
+
+.header-text {
+    font-size: 28px;
+    margin-left: 7.5px;
+}
+
+.header {
+    background-color: #1d1d1d;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.see-through-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.header-container {
+    height: 75px;
+    padding: 15px 15px 20px;
+}
+
+.main {
+    margin-bottom: 30px;
+    margin-top: calc(var(--vh) * 100 - 30px);
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 630px) {
+    .main {
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+    }
+}
+
+.heading {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.page-heading {
+    font-size: 32px;
+    margin: 0 0 30px;
+}
+
+.heading-with-subtext {
+    margin-bottom: 0;
+}
+
+.section-heading {
+    font-size: 24px;
+    margin: 30px 0;
+}
+
+.subtext {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.well {
+    background-color: rgba(29, 29, 29, 0.8);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.well *:first-child {
+    margin-top: 0;
+}
+
+.well *:last-child {
+    margin-bottom: 0;
+}
+
+.inside-list {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    background-color: #1d1d1d;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    color: #eee;
+    display: inline-block;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 22px;
+    height: 60px;
+    line-height: 56px;
+    overflow: hidden;
+    padding: 0 30px;
+    transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.button:active {
+    background-color: #666;
+}
+
+@media (any-hover: hover) {
+    .button:hover {
+        background-color: #666;
+        cursor: pointer;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.guest .hide-guest {
+    display: none;
+}
+
+.hero {
+    background-image: url("hero.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+    position: fixed;
+    top: 0;
+    width: 100%;
 }

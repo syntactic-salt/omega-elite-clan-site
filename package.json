@@ -1,31 +1,31 @@
 {
-  "name": "omega-elite-clan-site",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
-  },
+  "name": "omega-elite-discord-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "npm run clean && webpack --mode=production",
+    "clean": "rm -rf build/",
+    "start": "webpack-dev-server --port 3000 --https --host 10.0.0.182"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "babel-loader": "8.0.6",
+    "copy-webpack-plugin": "5.0.4",
+    "css-loader": "3.2.0",
+    "file-loader": "4.2.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "terser-webpack-plugin": "2.1.3",
+    "webpack": "4.41.1",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.8.2"
   }
 }
